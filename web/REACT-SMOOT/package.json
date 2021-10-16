@@ -1,0 +1,20 @@
+{
+    "name": "react-smoot",
+    "linkPage": "React Website using Styled Components and Smooth Scroll - Beginner Project Fully Responsive-Nl54MJDR2p8.mp4",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "dependencies": {
+        "react": "^17.0.0",
+        "react-dom": "^17.0.0"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "^1.0.0",
+        "react-router-dom": "^5.3.0",
+        "styled-components": "^5.3.1",
+        "vite": "^2.6.4"
+    }
+}
