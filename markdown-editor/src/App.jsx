@@ -1,15 +1,15 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import "./app.css";
+import "./App.css";
 import Remarkable from "remarkable";
 
-class MarkdownEditor extends React.Component {
+class MarkdownEditor extends Component {
   constructor(props) {
     super(props);
-    this.handleChange = this.handleChange.bind(this);
     this.state = {
       value: "Type some *markdown* here!",
     };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
@@ -47,11 +47,4 @@ class MarkdownEditor extends React.Component {
   }
 }
 
-// ========================================
-
-ReactDOM.render(
-  <MarkdownEditor />,
-  document.getElementById("root"),
-);
-
-export default App;
+export default MarkdownEditor;
