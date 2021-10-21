@@ -1,10 +1,14 @@
 import * as THREE from "three";
+import { OrbitControls } from "./components/OrbitControls.js";
 
+import fragment from "./components/fragment.glsl";
 import vertex from "./components/vertexParticles.glsl";
-import * as dat from 'dat.gui'
-import gsap from 'gsap';
+import * as dat from "dat.gui";
+import gsap from "gsap";
 
-class Sketch {
+import dna from "./components/dna.glb";
+
+export default class Sketch {
   constructor(options) {
     this.scene = new THREE.Scene();
 
@@ -14,9 +18,12 @@ class Sketch {
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(this.width, this.height);
-    this.renderer.setClearColor(0xeeeee, 1);
+    this.renderer.setClearColor(0x111111, 1);
     this.renderer.physicallyCorrectLights = true;
     this.renderer.outputEncoding = THREE.sRGBEncoding;
+
+    this.load = new GLTFLoader();
+    this.dracoLoader = new DracoLoader();
 
     this.container.appendChild(this.renderer.domElement);
 
@@ -33,33 +40,36 @@ class Sketch {
 
     this.isPlaying = true;
 
+    this.loader.load(dna, (gltf) => {
+      console.log("gtlf");
+    });
+
     this.addObjects();
     this.resize();
     this.render();
     this.setupResize();
     // this.settings();
-    
   }
   settings() {
     let that = this;
     this.settings = {
-      progress: 0
+      progress: 0,
     };
     this.gui = new dat.GUI();
-    this.gui.add(this.settings, "progress", 0, 1, 0.01)
-  };
+    this.gui.add(this.settings, "progress", 0, 1, 0.01);
+  }
 
   setupResize() {
-    window.addEventListener("resize", this.resize.bind(this))
-  };
+    window.addEventListener("resize", this.resize.bind(this));
+  }
 
   resize() {
     this.width = this.container.offsetWidth;
-    this.height  = this.container.offsetHeight;
+    this.height = this.container.offsetHeight;
     this.renderer.setSize(this.width, this.height);
     this.camera.aspect = this.width / this.height;
     this.camera.updateProjectionMatrix();
-  };
+  }
 
   addObjects() {
     let that = this;
@@ -70,12 +80,20 @@ class Sketch {
       side: THREE.DoubleSide,
       uniforms: {
         time: { value: 0 },
-        resolution: { value: new THREE.Vector4() },
+        // resolution: { value: new THREE.Vector4() },
+        uniforms: {
+          time: { value: 0 },
+          uColor1: { value: new THREE.Color(0x612574) },
+          uColor2: { value: new THREE.Color(0x612574) },
+          uColor3: { value: new THREE.Color(0x612574) },
+          resolution: { value: new THREE.Vector4() },
+        },
       },
       vertexShader: vertex,
       fragmentShader: fragment,
     });
-    this.geometry = new THREE.PlanGeometry(1, 1, 1, 1);
+
+    // this.geometry = new THREE.PlanGeometry(1, 1, 1, 1);
 
     this.plane = new THREE.ShaderMaterial(this.geometry, this.material);
     this.scene.add(this.plane);
@@ -91,15 +109,7 @@ class Sketch {
     }
   }
   render() {
-    if(!this.isPlaying) return;
+    if (!this.isPlaying) return;
   }
 }
 
-
-    this.camera.updateProjectionMatrix();
-  }
-
-
-
-
-export default Sketch;

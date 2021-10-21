@@ -1,13 +1,14 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { BrowserRouter as Router } from "react-router-dom";
+import DnaEff from "../components/DNA/Dna.jsx";
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <Navbar />
-    </Router>
+    <Dna />
+    // <Router>
+    //   <Navbar />
+    // </Router>
   );
 }
 
-export default App;
