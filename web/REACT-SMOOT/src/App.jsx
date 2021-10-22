@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import { BrowserRouter as Router } from "react-router-dom";
-import DnaEff from "../components/DNA/Dna.jsx";
+// import Navbar from "../components/Navbar";
+// import { BrowserRouter as Router } from "react-router-dom";
+import DnaEff from "../components/DNA/Dna.js";
 
 export default function App() {
   return (

@@ -1,12 +1,14 @@
 import * as THREE from "three";
-import { OrbitControls } from "./components/OrbitControls.js";
+import { OrbitControls } from "../../node_modules/three/examples/jsm/controls/OrbitControls.js";
+import { GLTFLoader } from "../../node_modules/three/examples/jsm/loaders/GLTFLoader.js";
+import { DracoLoader } from "../../node_modules/three/examples/jsm/loaders/GLTFLoader.js";
 
 import fragment from "./components/fragment.glsl";
 import vertex from "./components/vertexParticles.glsl";
 import * as dat from "dat.gui";
 import gsap from "gsap";
 
-import dna from "./components/dna.glb";
+import dna from "./components/dna-02.glb";
 
 export default class Sketch {
   constructor(options) {
@@ -24,6 +26,12 @@ export default class Sketch {
 
     this.load = new GLTFLoader();
     this.dracoLoader = new DracoLoader();
+    this.dracoLoader.setDecoderPath(
+      "https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/js/libs/draco/",
+    ); // use a full url path
+
+    this.loader.setDRACOLoader(this.dracoLoader);
+    this.dracoLoader = new DRACOLoader();
 
     this.container.appendChild(this.renderer.domElement);
 
@@ -41,14 +49,16 @@ export default class Sketch {
     this.isPlaying = true;
 
     this.loader.load(dna, (gltf) => {
-      console.log("gtlf");
-    });
+      this.geometry = gtlf.scene.children[0];
 
-    this.addObjects();
-    this.resize();
-    this.render();
-    this.setupResize();
-    // this.settings();
+      this.geometry.center();
+
+      this.geometry = this.addObjects();
+      this.resize();
+      this.render();
+      this.setupResize();
+      // this.settings();
+    });
   }
   settings() {
     let that = this;
