@@ -1,0 +1,11 @@
+{
+  "name": "globalEarth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "dat.gui": "^0.7.7",
+    "parcel": "^2.0.0",
+    "three": "^0.133.1"
+  }
+}

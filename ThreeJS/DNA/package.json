@@ -1,0 +1,17 @@
+{
+    "name": "DNA",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "devDependencies": {
+        "@parcel/transformer-glsl": "^2.0.0",
+        "dat.gui": "^0.7.7",
+        "gsap": "^3.8.0",
+        "parcel": "latest",
+        "three": "^0.133.1"
+    },
+    "scripts": {
+        "st": "parcel",
+        "bld": "parcel build"
+    }
+}
