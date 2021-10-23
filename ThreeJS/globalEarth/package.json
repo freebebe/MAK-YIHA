@@ -1,11 +1,14 @@
 {
-  "name": "globalEarth",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "devDependencies": {
-    "dat.gui": "^0.7.7",
-    "parcel": "^2.0.0",
-    "three": "^0.133.1"
-  }
+    "name": "globalEarth",
+    "version": "1.0.0",
+    "main": "index.js",
+    "url": "https://codepen.io/bradtraversy/pen/VOpZvp",
+    "license": "MIT",
+    "devDependencies": {
+        "dat.gui": "^0.7.7",
+        "eslint": "^8.1.0",
+        "parcel": "^2.0.0",
+        "prettier": "^2.4.1",
+        "three": "^0.133.1"
+    }
 }

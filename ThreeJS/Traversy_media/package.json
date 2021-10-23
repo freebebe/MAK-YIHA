@@ -1,0 +1,15 @@
+{
+  "name": "Traversy_media",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.1.0",
+    "prettier": "^2.4.1",
+    "three": "^0.133.1"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
