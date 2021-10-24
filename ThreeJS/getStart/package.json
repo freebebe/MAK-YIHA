@@ -1,0 +1,16 @@
+{
+    "name": "getStart",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "vite": "^2.6.10"
+    },
+    "devDependencies": {
+        "three": "^0.133.1"
+    }
+}
