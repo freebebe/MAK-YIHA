@@ -11,6 +11,7 @@
         "vite": "^2.6.10"
     },
     "devDependencies": {
+        "path": "^0.12.7",
         "three": "^0.133.1"
     }
 }
