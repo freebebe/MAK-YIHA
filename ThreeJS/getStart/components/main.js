@@ -52,10 +52,10 @@ camera.position.z = 5;
 function animate() {
   requestAnimationFrame(animate);
   // 为什么我们不直接用setInterval来实现刷新的功能呢？”当然啦，我们的确可以用setInterval，
-  // 但是，requestAnimationFrame有很多的优点: 
+  // 但是，requestAnimationFrame有很多的优点:
   // 最重要的一点或许就是当用户切换到其它的标签页时，它会暂停，因此不会浪费用户宝贵的处理器资源，也不会损耗电池的使用寿命。
 
-//______________________________使立方体动起来
+  //______________________________使立方体动起来
   cube.rotation.x += 0.05;
   cube.rotation.y += 0.05;
   cube.rotation.z += 0.01;
@@ -63,5 +63,4 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
-
 

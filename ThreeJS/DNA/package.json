@@ -11,7 +11,10 @@
         "three": "^0.133.1"
     },
     "scripts": {
-        "st": "parcel",
-        "bld": "parcel build"
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "dependencies": {
+        "vite": "^2.6.10"
     }
 }
