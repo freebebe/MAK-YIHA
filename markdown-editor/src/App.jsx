@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import "./App.css";
 import Remarkable from "remarkable";
 
-class MarkdownEditor extends Component {
+export default class MarkdownEditor extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,7 +43,6 @@ class MarkdownEditor extends Component {
         </div>
       </div>
     );
-  }
+  };
 }
 
-export default MarkdownEditor;

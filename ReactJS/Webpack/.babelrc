@@ -1,0 +1,9 @@
+{
+    "presets": [
+        "es2015",
+        "es2021",
+        "es12",
+        "react",
+    ],
+    "plugins": []
+}
