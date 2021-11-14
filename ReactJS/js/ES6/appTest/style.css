@@ -1,0 +1,44 @@
+.app {
+    border: 1px solid grey;
+    border-radius: 6px;
+    padding: 15px 15px 0 15px;
+}
+
+input {
+    border: 1px solid grey;
+    border-radius: 6px;
+    font-size: 1.3em;
+    width: 100%;
+}
+
+.add{
+    background-color: #000000;
+    margin-top: 20px;
+    color: #fff;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+}
+.list{
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+.item {
+    width: 100%;
+    border-bottom: 1px solid #000;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove {
+    background-color: rgb(212, 101, 101);
+    margin-top: 20px;
+    color: #fff;
+    bottom: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+}

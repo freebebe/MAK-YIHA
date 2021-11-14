@@ -1,0 +1,59 @@
+	body, html, ul, li, i, span {
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		font-family: Lucida Grande, Lucida Sans, Arial, "microsoft yahei",'宋体',sans-serif;
+	}
+
+	ul {
+		list-style: none;
+	}
+
+	.kapasiti-bar {
+		width: 80%; /* 宽度请自行修改 */
+		height: 42px; /* 高度自行修改 */
+		background-color: #666;
+		margin: 200px auto 100px;
+		border-radius: 3px;
+		overflow: hidden
+	}
+	.kapasiti-bar li {
+		float: left;
+		-webkit-transition: width .3s ease;
+		-moz-transition: width .3s ease;
+		transition: width .3s ease;
+	}
+	
+	.kapasiti-btn {
+		text-align: center;
+	}
+	.kapasiti-btn li {
+		display: inline-block;
+		font-size: 16px;
+		line-height: 32px;
+		cursor: pointer;
+	}
+	.kapasiti-btn li i {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		border-radius: 100%;
+		margin: 0 5px 1px 15px;
+	}
+
+
+	.no-selected i {
+		background-color: #ccc;
+	}
+	.pink-C, 
+	li:hover .pink-C { background-color: #fa4c7e }
+	.yellow-C, 
+	li:hover .yellow-C { background-color: #fdd243 }
+	.green-C, 
+	li:hover .green-C { background-color: #78da59 }
+	.blue-C, 
+	li:hover .blue-C { background-color: #166cd6 }
+	.orange-C, 
+	li:hover .orange-C { background-color: #33bdf5 }
