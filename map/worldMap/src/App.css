@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -15,6 +16,7 @@
 
 .App-header {
   background-color: #282c34;
+  font-family:  Georgia, 'Times New Roman', Times, serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

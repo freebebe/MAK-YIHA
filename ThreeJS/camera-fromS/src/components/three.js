@@ -29,4 +29,11 @@ function init() {
   camera.position.x = 0;
   camera.position.y = 75;
   camera.position.z = 16;
+
+  // ---------------------FlyControls
+  controls = new FlyControls(camera, renderer.domElement);
+  controls.movementSpeed = 10;
+  controls.rollSpeed = 0.01;
+  controls.autoForward = false;
+  controls.dragToLook = true;
 }

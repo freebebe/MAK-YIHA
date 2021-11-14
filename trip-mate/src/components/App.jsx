@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // components
-import { addTrip } from "./trips/addTrip";
+import { AddTrip } from "./trips/AddTrip";
 
 export class App extends Component {
   constructor(props) {
@@ -25,10 +25,10 @@ export class App extends Component {
         },
       ],
     };
-    this.addTrip = this.addTrip.bind(this);
+    this.AddTrip = this.AddTrip.bind(this);
   }
 
-  addTrip(newTrip) {
+  AddTrip(newTrip) {
     this.setState((prevState) => {
       return {
         allTrips: [

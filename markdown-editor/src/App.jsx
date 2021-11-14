@@ -5,7 +5,6 @@ import Remarkable from "remarkable";
 const md = new Remarkable();
 
 function MarkdownEditor() {
-  this.handleChange = this.handleChange.bind(this);
   const [mdEditor, setMdEditor] = useState(
     {
     value: "Type some *markdown* here!"
@@ -25,7 +24,7 @@ function MarkdownEditor() {
       <div className="output">
         <h3>Markdown</h3>
         <div
-          dangerouslySetInnerHTML={()=>{__html: md.render(mdEditor)}}
+          dangerouslySetInnerHTML={{__html: md.render(mdEditor)}}
           className="output-text"
         >
         </div>

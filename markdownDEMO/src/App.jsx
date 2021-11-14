@@ -6,6 +6,10 @@ const md = new Remarkable();
 function App() {
   const [text, setText] = useState("");
 
+  const onChangeText = (e) => {
+    setText(e.target.value);
+  };
+
   return (
     <div>
       <main className="">
@@ -23,7 +27,7 @@ function App() {
             required
             placeholder="Type in some markdown"
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={onChangeText}
           >
           </textarea>
 

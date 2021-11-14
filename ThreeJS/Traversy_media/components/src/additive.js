@@ -53,7 +53,7 @@ function init() {
   // ground
   //
   const mesh = new THREE.Mesh(
-    new HTREE.PlaneGeometry(100, 100),
+    new THREE.PlaneGeometry(100, 100),
     new THREE.MeshPhongMaterial({ color: 0x999999, depthWrite: false }),
   );
 

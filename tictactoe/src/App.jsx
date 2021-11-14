@@ -1,4 +1,4 @@
-import React from "react";
+import {useState, useEffects} from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
 
@@ -28,6 +28,21 @@ function CalculateWinner(squares) {
     }
   }
   return null;
+}
+
+function Board() {
+  const [state, setState] = useState()
+  const [squares, setSquares]  = useState[
+    Array(9),
+    fill(null)
+  ]
+  const [xIsNext, setXIsNext] = useState(true)
+
+  reset() {
+    {setSquares}: {squares.map((x) => null)};
+    {setXIsNext}: true
+  }
+  
 }
 
 class Board extends React.Component {

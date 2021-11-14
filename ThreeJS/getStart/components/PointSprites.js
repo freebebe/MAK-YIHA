@@ -120,6 +120,7 @@ function init() {
 function onWindowResize() {
   windowHalfX = window.innerWidth / 2;
   windowHalfY = window.innerHeight / 2;
+  windowHalfZ = window.innerWidth * 2;
 
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
@@ -132,6 +133,7 @@ function onPointerMove(event) {
 
   mouseX = event.clientX - windowHalfX;
   mouseY = event.clientY - windowHalfY;
+  mouseZ = event.clientZ - windowHalfZ;
 }
 
 //

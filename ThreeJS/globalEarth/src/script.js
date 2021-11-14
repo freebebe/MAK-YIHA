@@ -53,8 +53,8 @@ const camera = new THREE.PerspectiveCamera(
   100,
 );
 
-camera.position.x = 0;
-camera.position.y = 0;
+camera.position.x = 5;
+camera.position.y = 5;
 camera.position.z = 2;
 scene.add(camera);
 
@@ -72,7 +72,7 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime();
 
   //update object
-  sphere.rotation.y = .5 * elapsedTime;
+  sphere.rotation.y = 0.8 * elapsedTime;
 
   //update obital controls
   //controls.update()

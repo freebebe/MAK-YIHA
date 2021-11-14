@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AddTrip = ({ newTrip }) => {
+function AddTrip (({ newTrip }) => {
   let date, place, type;
   const submit = (e) => {
     e.preventDefault();
@@ -14,19 +14,15 @@ export const AddTrip = ({ newTrip }) => {
   return (
     <div className="form-container">
       <from className="form black-container">
-        <label
-          htmlFor="
-            "
-        >
+        <label htmlFor="
+            ">
           <h3></h3>
           <br />
           <br />
           <br />
         </label>
-        <label
-          htmlFor="
-    "
-        >
+        <label htmlFor="
+    ">
           Date: <br />
           <input id="date" type="date" required ref={(input) => date = input} />
         </label>

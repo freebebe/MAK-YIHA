@@ -33,9 +33,12 @@ function init() {
 function animate() {
   requestAnimationFrame(animate);
 
-  cube.rotation.x += 0.005;
-  cube.rotation.y += 0.005;
-  cube.rotation.z += 0.005;
+  // cube.rotation.x += 0.005;
+  // cube.rotation.y += 0.005;
+  // cube.rotation.z += 0.005;
+
+  cube.rotation.set += (0.005, 0.005, 0.005);
+  //                      x       y      z
 
   renderer.render(scene, camera);
 }

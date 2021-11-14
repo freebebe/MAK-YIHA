@@ -1,7 +1,6 @@
 import React from "react";
 
 const CheckList = (props) => (
-  
   <ul>
     {
       props.items.map((item) => (
@@ -35,7 +34,7 @@ export default class CheckApp extends React.Component{
         <div>
         <h3>test Toggle</h3>
           <CheckList items={this.state.items} />
-          <form onSubmit{this.handleSubmit} action="">
+          <form onSubmit{...this.handleSubmit} action="">
             <input onChange={this.onChange} value={this.state.text} type="" />
             <button>{`Add #` + (this.state.items.length + 1)}</button>
           </form>
