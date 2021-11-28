@@ -13,20 +13,27 @@ import Button from "./Button";
 const Header = ({ title }) => {
   // ({title}) = (props)
   const onClick = () => {
-    console.log("click");
-  };
+    console.log('Click')
+  }
 
   return (
     <header className="header">
-      <h1 style={{ color: "drakblue", backgroundColor: "grey" }}>{title}</h1>
+      <h1 style={headingStyle}>{title}</h1>
       <Button color="green" text="Hello" onClick={onClick} />
     </header>
   );
 };
 
-// Header.defaultProps = {
-//   title: "task tracker",
-// };
+Header.defaultProps = {
+  title: "task tracker",
+};
+
+// css in js
+const headingStyle = {
+  color: "drakblue",
+  backgroundColor: "grey"
+
+}
 
 Headers.propType = {
   title: PropTypes.string.isRequired,
