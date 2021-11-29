@@ -1,21 +1,30 @@
-import {Component} from 'react';
+import {Component, useState} from 'react';
 import ReactDOM from 'react-dom';
 
 
-class App extends Component {
-  constructor(props){
-    super(props)
-    this.state ={};
-  }
+function App(props) {
+  const [state, setState] = useState();
 
-  render() {
-    return(
-      <div>
-      
-      </div>
-    )
-  }
+  return (
+    <div>
+
+    </div>
+  )
 }
+// class App extends Component {
+//   constructor(props){
+//     super(props)
+//     this.state ={};
+//   }
+//
+//   render() {
+//     return(
+//       <div>
+//       
+//       </div>
+//     )
+//   }
+// }
 
 ReactDOM.render(
   <App />,

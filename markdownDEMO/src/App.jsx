@@ -6,8 +6,8 @@ const md = new Remarkable();
 function App() {
   const [text, setText] = useState("");
 
-  const onChangeText = (e) => {
-    setText(e.target.value);
+  const onChangeText = (eff) => {
+    setText(eff.target.value);
   };
 
   return (

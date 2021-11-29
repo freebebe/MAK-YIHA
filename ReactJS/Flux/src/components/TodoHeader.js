@@ -1,8 +1,7 @@
-import {Components, useState} from 'react';
-import {TodoActions} from '../actions/todoActions.js';
+import { useState } from 'react';
+import { TodoActions } from '../actions/todoActions.js';
 
-export default function TodoHeader () {
-  this.onChange = this.onChange.bind(this)
+export default function TodoHeader() {
   const [text, setText] = useState('');
   const [editing, setEditing] = useState(false)
 
@@ -12,10 +11,10 @@ export default function TodoHeader () {
       <div>
         <input
           value={text}
-          type="text" 
+          type="text"
           placeholder="your choose"
-          onChange={ (e) => setEditing(e.target.value)}
-         />
+          onChange={(e) => setEditing(e.target.value)}
+        />
       </div>
       <button onClick={TodoActions.addTodo}>send</button>
     </div>

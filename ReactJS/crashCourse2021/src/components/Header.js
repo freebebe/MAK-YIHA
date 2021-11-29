@@ -31,15 +31,15 @@ Header.defaultProps = {
   title: "task tracker",
 };
 
-// css in js
-const headingStyle = {
-  color: "drakblue",
-  backgroundColor: "grey"
-
-}
 
 Headers.propType = {
   title: PropTypes.string.isRequired,
 };
+
+// css in js
+const headingStyle = {
+  color: "drakblue",
+  backgroundColor: "grey"
+}
 
 export default Header;

@@ -42,7 +42,6 @@ function Board() {
     {setSquares}: {squares.map((x) => null)};
     {setXIsNext}: true
   }
-  
 }
 
 class Board extends React.Component {

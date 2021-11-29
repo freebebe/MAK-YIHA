@@ -3,11 +3,14 @@ import ReactDOM from "react-dom";
 import "./App.css";
 import Remarkable from "remarkable";
 
+const md = new Remarkable();
+
 function MarkdownEditor() {
-  const [state] = useState({
+  const [state, setState] = useState({
     value: "Type some *markdown* here!",
   });
   this.handleChange = this.handleChange.bind(this);
+  this.getRawMarkup = this.getRawMarkup.bind(this);
 
   handleChange(e) {
     this.setState({
@@ -16,7 +19,6 @@ function MarkdownEditor() {
   }
 
   getRawMarkup() {
-    const md = new Remarkable();
     return { __html: md.render(state.value) };
   }
 

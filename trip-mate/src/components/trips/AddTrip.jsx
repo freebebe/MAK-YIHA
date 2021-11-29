@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddTrip (({ newTrip }) => {
+const AddTrip = (({ newTrip }) => {
   let date, place, type;
   const submit = (e) => {
     e.preventDefault();

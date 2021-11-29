@@ -10,7 +10,7 @@ const App = () => {
   const [showAddTask, setShowAddTasks] = useState(false)
   const [tasks, setTasks] = useState([])
 
-  useEffect(()=> {
+  useEffect( ()=> {
     const getTasks = async () => {
       const taskFromServer = await fetchTasks()
       setTasks(taskFromServer)
@@ -31,7 +31,7 @@ const App = () => {
       headers: {
         'Contents-type': 'application/json',
       },
-      body: JSON.stringify(task),
+      body: JSON.stringify(tasks),
     }),
 
     const data = await res.json()

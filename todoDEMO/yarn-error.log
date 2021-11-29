@@ -1,21 +1,20 @@
 Arguments: 
-  /usr/bin/node /usr/bin/yarn
+  /usr/bin/node /usr/bin/yarn add -D webpack webpack-cli @babel/core @babel/preset-env babel-loader html-webpack-plugin webpack-dev-server
 
 PATH: 
-  /usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/oho/.yarn/bin:/home/oho/.yarn/bin
+  /usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/wgx21dgt1xzz7/.config/yarn/global/node_modules/.bin:/home/wgx21dgt1xzz7/.config/yarn/global/node_modules/.bin
 
 Yarn version: 
-  1.22.15
+  1.22.17
 
 Node version: 
-  16.11.0
+  17.1.0
 
 Platform: 
   linux x64
 
 Trace: 
-  Error: connect ECONNREFUSED 224.0.0.1:443
-      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1146:16)
+  Error: ENOENT: no such file or directory, open '/home/wgx21dgt1xzz7/.cache/yarn/v6/npm-esbuild-linux-32-0.13.5-00083740af7f1416951c634a461e3d01ed812cd0-integrity/node_modules/esbuild-linux-32/.yarn-metadata.json'
 
 npm manifest: 
   {
@@ -28,11 +27,11 @@ npm manifest:
     },
     "dependencies": {
       "react": "^17.0.0",
-      "react-dom": "^17.0.0"
+      "react-dom": "^17.0.0",
+      "react-scripts": "^4.0.3"
     },
     "devDependencies": {
       "@vitejs/plugin-react": "^1.0.0",
-      "react-scripts": "^4.0.3",
       "vite": "^2.6.4"
     }
   }

@@ -11,10 +11,10 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: ['/\.?js$/'],
+      test: ['/\.?js$/', '/\.css$/i', '/\.(png|jp(e*)g|svg|gif)$', '/\.svg$/'],
       exclude: [/node_modules/],
       use: {
-        loader: ['babel-loader', 'style-loader', 'css-loader'],
+        loader: ['babel-loader', 'style-loader', 'css-loader', 'file-loader', '@svgr/webpack'],
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react']
         }

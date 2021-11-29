@@ -41,8 +41,8 @@ export default function CheckApp() {
   //   </form>
   //   </div>
   // )
-  
-  function handleSubmit(e) {
+
+  const handleSubmit=(e)=> {
       e.preventDefault();
       const nextItems = items.concat([{
         text: {text},
@@ -69,10 +69,10 @@ export default function CheckApp() {
       <checklist items={(e)=>setText({text: e.target.value})} />
     <form action="" onSubmit{...handleSubmit}>
       <input 
-    type="text"
-    onChange{...setText} />       // may: items={(e)=>setText({text: e.target.value})}
-    <button>
-    {`Add #` + (items.length + 1)}
+        type="text"
+        onChange{...setText} />       // may: items={(e)=>setText({text: e.target.value})}
+        <button>
+      {`Add #` + (items.length + 1)}
     </button>
     </form>
     </div>
