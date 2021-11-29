@@ -1,21 +1,25 @@
 Arguments: 
-  /usr/bin/node /usr/bin/yarn add -D flow-bin
+  /usr/bin/node /usr/bin/yarn
 
 PATH: 
-  /usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/de0013bian/.yarn/bin/**,
+  /usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/hola/.yarn/bin:/home/hola/.yarn/bin:/home/hola/.yarn/bin
 
 Yarn version: 
   1.22.17
 
 Node version: 
-  17.1.0
+  16.11.1
 
 Platform: 
   linux x64
 
 Trace: 
-  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:72:26)
+  SyntaxError: /home/hola/project/commit/test1/MAK-YIHA/ReactJS/crashCourse2021/package.json: Unexpected token } in JSON at position 412
+      at JSON.parse (<anonymous>)
+      at /usr/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/lib/node_modules/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
@@ -33,9 +37,10 @@ npm manifest:
     },
     "devDependencies": {
       "@vitejs/plugin-react": "^1.1.0",
+      "flow-bin": "^0.165.1",
       "prop-types": "^15.7.2",
       "react-icons": "^4.3.1",
-      "vite": "^2.6.14"
+      "vite": "^2.6.14",
     }
   }
 
@@ -5155,6 +5160,11 @@ Lockfile:
     version "1.0.3"
     resolved "https://registry.yarnpkg.com/flatten/-/flatten-1.0.3.tgz#c1283ac9f27b368abc1e36d1ff7b04501a30356b"
     integrity sha512-dVsPA/UwQ8+2uoFe5GHtiBMu48dWLTdsuEd7CKGlZlD78r1TTWBvDuFaFGKCo/ZfEr95Uk56vZoX86OsHkUeIg==
+  
+  flow-bin@^0.165.1:
+    version "0.165.1"
+    resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.165.1.tgz#55d584b10fe1ed8299fe12be968a9e58810303ee"
+    integrity sha512-AjmvNdY8oFsOb0ZQkYxFj3jnIzqrCIcMeuQCTYbTJuAJoCbz7GszOFzL0Sp2qcK2BcIYWnC4OJbLAQmnDjgI7A==
   
   flush-write-stream@^1.0.0:
     version "1.1.1"

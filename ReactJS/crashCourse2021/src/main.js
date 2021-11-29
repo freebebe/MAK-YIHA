@@ -1,8 +1,9 @@
-import React from "react"
+import React from "react";
+import {Router, Route, hashHistory} from 'react-router';
 import ReactDOM from "react-dom";
-import App from "./App.js";
+import Run from "./App.js";
 
 ReactDOM.render(
-  <App />,
+  <Run />,
   document.getElementById("root"),
 );
