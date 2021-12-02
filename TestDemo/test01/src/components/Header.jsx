@@ -16,7 +16,10 @@ const Header = ({title}) => {
   )
 }
 
-const HeaderCSS = { color: 'darkblue', backgroundColor: 'grey' }
+const HeaderCSS = {
+  color: 'darkblue',
+  backgroundColor: 'grey'
+}
 
 Header.defaultProps = {
   title: "def Title Message",

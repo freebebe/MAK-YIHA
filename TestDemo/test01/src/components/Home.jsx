@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import Header from './Header'
+import Tasks from './Tasks'
 
 const App = () => {
   const [tasks, setTasks] = useState([
@@ -26,6 +27,7 @@ const App = () => {
   return(
     <div className="container">
       <Header />
+      <Tasks tasks={tasks}/>
     </div>
   )
 }

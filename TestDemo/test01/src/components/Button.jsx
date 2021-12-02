@@ -1,6 +1,6 @@
 import PropsTypes from 'prop-types'
 
-const Button = ({color}) => {
+const Button = ({ color }) => {
   return(
     <button 
     style={{backgroundColor: color}}
