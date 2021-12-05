@@ -1,9 +1,11 @@
-import {useState} from 'react'
+import { useState, useEffect } from 'react'
 import Header from './Header'
 import Tasks from './Tasks'
+import AddTasks from './AddTasks'
 
 const App = () => {
-  const [tasks, setTasks] = useState([
+  const [showAddTasks, putAddTasks] = useState(false)
+  const [tasksList, setTasksList] = useState([
     {
       id: 1,
       text: 11111,
@@ -24,10 +26,38 @@ const App = () => {
     }
   ])
 
+  // useEffect(()=> {
+  //   const getTaskList = () => {
+  //     const taskInSever = fetchTaskList()
+  //     setTasksList(taskInSever)
+  //   }
+  //   getTaskList()
+  // }, [])
+
+  // const addTaskList = () => {
+  //   const id = Math.floor(Math.random()*10000) + 1
+  //   const newTaskList = (id, ...taskView)
+  //   setTasksList(...tasksList, newTaskList)
+  // }
+
+  const toggleDel = (id) => {
+    setTasksList(tasksList.filter((taskList)=> taskList.id !== id))
+  }
+
+  const toggleRem = () => {
+  }
+
+
   return(
     <div className="container">
-      <Header />
-      <Tasks tasks={tasks}/>
+      <Header onAdd={()=>putAddTasks(!showAddTasks)}
+      showAdd={showAddTasks}
+      />
+      <Tasks
+        tasksList={tasksList}
+        onToggle={toggleRem}
+        onDel={toggleDel}
+      />
     </div>
   )
 }

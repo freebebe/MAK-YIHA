@@ -1,8 +1,10 @@
-const Task=({task})=>{
+const Task = ({ taskView, onDel, onToggle }) => {
   return(
-    <div className="task">
-      <h3>{task.text}</h3>
-      <p>{task.day}</p>
+    <div className='' onDoubleClick={()=>onToggle(taskView.id)}>
+      <h3 onClick={()=> onDel(taskView.id)}>
+        {taskView.text}
+      </h3>
+      <p>{taskView.day}</p>
     </div>
   )
 }
