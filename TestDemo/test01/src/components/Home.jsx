@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import Header from './Header'
 import Tasks from './Tasks'
-import AddTasks from './AddTasks'
+import AddTask from './AddTask'
 
 const App = () => {
-  const [showAddTasks, putAddTasks] = useState(false)
+  const [showAddTask, setShowAddTask] = useState(false)
   const [tasksList, setTasksList] = useState([
     {
       id: 1,
@@ -26,38 +26,42 @@ const App = () => {
     }
   ])
 
-  // useEffect(()=> {
-  //   const getTaskList = () => {
-  //     const taskInSever = fetchTaskList()
-  //     setTasksList(taskInSever)
-  //   }
-  //   getTaskList()
-  // }, [])
-
-  // const addTaskList = () => {
-  //   const id = Math.floor(Math.random()*10000) + 1
-  //   const newTaskList = (id, ...taskView)
-  //   setTasksList(...tasksList, newTaskList)
-  // }
-
   const toggleDel = (id) => {
-    setTasksList(tasksList.filter((taskList)=> taskList.id !== id))
+    setTasksList(tasksList.filter((taskView)=>taskView.id !== id))
   }
 
-  const toggleRem = () => {
+  const toggleRem = (id) => {
+    setTasksList(
+      tasksList.map((taskView)=>
+        taskView.id === id ?
+        {...taskView, reminder: !taskView.reminder} :
+        taskView
+      )
+    )
   }
 
+  const addTask = (taskView) => {
+    const getId = Math.floor(Math.random() * 10000) + 1
+    const newTask = {getId, ...taskView}
+    setTasksList(...tasksList, newTask)
+  }
 
   return(
     <div className="container">
-      <Header onAdd={()=>putAddTasks(!showAddTasks)}
-      showAdd={showAddTasks}
-      />
-      <Tasks
-        tasksList={tasksList}
-        onToggle={toggleRem}
-        onDel={toggleDel}
-      />
+    <Header />
+    <AddTask onAdd={addTask} />
+      { tasksList.length > 0 ?
+        ( <Tasks
+            tasksList={tasksList}
+            onDel={toggleDel}
+            onToggle={toggleRem}
+          /> ) : (
+          <a href="" className='nomoreP'>
+            no more 2 Show
+            Come tomorrow Please
+          </a>
+        )
+      }
     </div>
   )
 }
