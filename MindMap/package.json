@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.0",
+    "prop-types": "^15.7.2",
     "react-flow-renderer": "^9.6.11",
     "vite": "^2.6.4"
   }

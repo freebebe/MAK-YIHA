@@ -1,68 +1,77 @@
 import {useState, Fragment} from 'react'
 import ReactFlow, {addEdge, Background, Controls, MiniMap} from 'react-flow-renderer'
 
-const [initialElements, setInitialElements] = useState([
-  {
-    id: 1,
-    type: 'input',
-    data: {label: 'NODE'},
-    position: {x:0, y:0}
-  }
-])
-
+import ButtonElements from './Button'
 
 const onLoad = (reactFlowInstance) => {
-  reactFlowInstance.fileView()
+  reactFlowInstance.fitView()
 }
 
 const MindNode = () => {
+  const [elements, setElements] = useState([]);
   const [name, setName] = useState()
+  const [mindColor, changeMindColor] = useState()
+  const [handleCheck, setHandleCheck] = useState(true)
+
 
   const addNode = () => {
-    setInitialElements(e=>e.concat({
-      id: (e.length+1).toString(),
+    setElements((eff1) => eff1.concat({
+      id: (eff1.length + 1).toString(),
       data: {label: `${name}`},
-      postion: {
+      position: {
         x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
+        y: Math.random() * window.innerHeight
       }
-    }))
+    }));
   }
+  const onConnect = (parms) => setElements(eff2 => addEdge(parms,eff2))
+  const connectStyle = {width: '100%', height: '90vh'}
 
-  const onConnect = (parms) => setInitialElements(e => addEdge(parms,e))
+  const MindColor = () => {
+  }
 
   return(
     <Fragment>
-      <h1>check</h1>
       <ReactFlow 
+        elements={elements}
         onLoad={onLoad}
-        elements = {initialElements}
         onConnect={onConnect}
-        style={{width: '100%', height: '90vh'}}
-        connectionLineType = "beizer"
+        style={connectStyle}
         connectionLineStyle = {{stroke: "#ddd", strokeWidth: 2}}
-        snapGrid={true}
-        snapToGrid={[16, 16]}
-    >
-        <Background
-          color= 'grey'
-          gap={16}
-        />
-        <MiniMap
-          nodeColor={n=>{
-            if(n.type === 'input') return 'blue';
+        connectionLineType = "beizer"
+        onlyRenderVisibleNodes = {true}
+        snapToGrid={true}
+        snapGrid={[16, 16]}
+      >
+        <Background color= '#888' gap={16} />
+        <MiniMap nodeColor = {(n) => {
+            if(n.type === 'input') return 'darkblue';
             return '#FFCC00'
           }}
-          />
+        />
         <Controls />
       </ReactFlow>
+
+    <div>
+        <input type="colorChangeButton" name="colorButton" onChange= {e => changeMindColor(e.target.value)} />
+        <button type="colorChangeButton" onClick={MindColor}>
+          ChangeColor
+        </button>
+    </div>
+
       <div>
-        <input 
-          type="text" 
-          name="title"
-          onChange = {e => setName(e.target.value)}
+        <input type="text" name="title"
+          onChange = {(eff3) => setName(eff3.target.value)}
         />
-      <button type="button" onClick={addNode} />
+        <button type="button" onClick={addNode}>
+          addNODE onClick
+        </button>
+        <button 
+          className={handleCheck ? "buttonTrue" : "buttonFalse"}
+          onClick={handleCheck}
+        >
+          click me changed color 
+        </button>
       </div>
     </Fragment>
   )

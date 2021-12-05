@@ -69,9 +69,9 @@ export default function Scatterplot() {
         const circles = svg
             .selectAll('circle')
             .data(data);
-        
+
         circles.exit().remove();
-        
+
         circles.enter().append('circle').attr('r', circleRadius)
             .merge(circles)
                 .attr('cx', d => xScale(d.x))
@@ -83,7 +83,9 @@ export default function Scatterplot() {
     useEffect(() => {
         // --- Setting up the outter svg
         const svgWidth = 400;
-        // const svgWidth = '100%'; // TODO: Use this percentage-based approach once I figure out how to handle the translate issue
+
+        // const svgWidth = '100%'; 
+        // TODO: Use this percentage-based approach once I figure out how to handle the translate issue
         const svgHeight = 300;
 
         const svg = d3.select(svg2Ref.current)
@@ -108,12 +110,12 @@ export default function Scatterplot() {
         // --- Set up the axes
         // TODO...
 
-        // --- Set up the svg elements        
+        // --- Set up the svg elements
         const circleGroups = svg
             .selectAll('g')
             .data(data)
-            .join('g')            
-            .attr('transform', 
+            .join('g')
+            .attr('transform',
                   item => `translate( ${xScale(item.x)}, ${yScale(item.y)} )`
             );
 
@@ -121,9 +123,9 @@ export default function Scatterplot() {
 
         circleGroups
             .append('circle').attr('r', circleRadius).attr('fill', 'red');
-        
+
         circleGroups.append('text')
-            .attr('x', 8) // These x and y values are relative to their group element, which is being positioned via a transform (or possibly via a nested <svg> element with x and y values)
+            .attr('x', 8)   // These x and y values are relative to their group element, which is being positioned via a transform (or possibly via a nested <svg> element with x and y values)
             .attr('y', '0.3rem')
             .text(item => item.name);
 
@@ -145,7 +147,7 @@ export default function Scatterplot() {
             //  This one proves that the scaling functions properly recalculate min and max (since these values are larger than the other data's x and y)
             //updatedData[1] = { name: 'Larry', x: 40, y: 40 };
 
-            setData(updatedData);            
+            setData(updatedData);
         }, 1800);
         return () => {
             clearTimeout(timer);
@@ -156,14 +158,14 @@ export default function Scatterplot() {
     return (
         <>
             <Head>
-                <title>D3 learning • Scatterplot</title>        
+                <title>D3 learning • Scatterplot</title>
             </Head>
 
             <Title>Scatterplot with <code>.merge()</code></Title>
 
             <p>
                 This demo was inspired by Mike Bostock&apos;s&nbsp;
-                <a href="https://bost.ocks.org/mike/join/">
+                <a href="https://duckduckgo.com/">
                     Thinking in joins
                 </a>
                 &nbsp;

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-// import MindNode from './components/MindNode'
-import MindNode from './test/MindNode'
+import MindNode from './components/MindNode'
+// import MindNode from './test/MindNode'
 import './App.css'
 
 function App() {
